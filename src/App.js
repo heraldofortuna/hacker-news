@@ -1,9 +1,10 @@
 import "./styles/App.css";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <div>
-      <h1>Hola mundo</h1>
+      <Header />
     </div>
   );
 };
