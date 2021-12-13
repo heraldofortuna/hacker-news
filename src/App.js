@@ -4,6 +4,7 @@ import Tab from "./components/Tab";
 import Card from "./components/Card";
 import NewSelect from "./components/NewSelect";
 import Button from "./components/Button";
+import Navigator from "./components/Navigator";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Card />
       <NewSelect />
       <Button text="1" />
+      <Navigator />
     </div>
   );
 };
