@@ -19,7 +19,11 @@ const Card = () => {
         </p>
       </div>
       <div className="card__fave">
-        <img className="card__fave__icon" src={heart} alt="Favorite publication icon" />
+        <img
+          className="card__fave__icon"
+          src={heart}
+          alt="Favorite publication icon"
+        />
       </div>
     </div>
   );

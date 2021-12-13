@@ -2,6 +2,7 @@ import "./styles/App.css";
 import Header from "./components/Header";
 import Tab from "./components/Tab";
 import Card from "./components/Card";
+import NewSelect from "./components/NewSelect";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <Header />
       <Tab />
       <Card />
+      <NewSelect />
     </div>
   );
 };
