@@ -1,0 +1,61 @@
+.card {
+  width: fit-content;
+  background-color: var(--color-white);
+  border-radius: 6px;
+  border: solid 1px var(--color-gray-4);
+  /** Flexbox styles **/
+  display: flex;
+  flex-direction: row;
+}
+
+.card__content {
+  padding: 26px;
+  /** Flexbox styles **/
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card__fave {
+  width: 68px;
+  background-color: var(--color-gray-3);
+  border-radius: 0 6px 6px 0;
+  /** Grid CSS styles **/
+  display: grid;
+  place-items: center;
+}
+
+.card__content__time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.card__content__time__icon {
+  width: 16px;
+}
+
+.card__content__time__text {
+  color: #767676;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.card__content__title {
+  color: var(--color-gray-7);
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+}
+
+.card__fave__icon {
+  cursor: pointer;
+}
