@@ -37,3 +37,7 @@
 .tab__item:first-child:hover {
   border-right: none;
 }
+
+.tab__item:first-child:hover + .tab__item:last-child {
+  border-left: 1px solid var(--color-blue-1);
+}
