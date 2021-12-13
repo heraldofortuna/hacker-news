@@ -30,3 +30,21 @@
   width: 90%;
   margin: 0 auto;
 }
+
+.tab-section {
+  padding: 70px 0;
+  /** Grid CSS styles **/
+  display: grid;
+  place-items: center;
+}
+
+.select-section {
+  padding: 0 0 30px 0;
+}
+
+.navigator-section {
+  padding: 100px 0;
+  /** Grid CSS styles **/
+  display: grid;
+  place-items: center;
+}
