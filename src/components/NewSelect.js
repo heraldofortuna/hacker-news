@@ -1,19 +1,6 @@
 import "../styles/NewSelect.css";
-import Select, { components } from "react-select";
-
-const IconOption = (props) => {
-  const { Option } = components;
-
-  return (
-    <Option {...props}>
-      <img
-        src={require("../assets/" + props.data.icon).default}
-        alt={props.data.label}
-      />
-      {props.data.label}
-    </Option>
-  );
-};
+import IconOption from "./IconOption";
+import Select from "react-select";
 
 const NewSelect = () => {
   const options = [
