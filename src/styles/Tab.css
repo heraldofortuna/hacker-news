@@ -20,12 +20,12 @@
   text-align: center;
 }
 
-.tab__item:first-child {
+.tab__item--left {
   border-right: none;
   border-radius: 2px 0 0 2px;
 }
 
-.tab__item:last-child {
+.tab__item--right {
   border-radius: 0 2px 2px 0;
 }
 
@@ -34,10 +34,10 @@
   border: 1px solid var(--color-blue-1);
 }
 
-.tab__item:first-child:hover {
+.tab__item--left:hover {
   border-right: none;
 }
 
-.tab__item:first-child:hover + .tab__item:last-child {
+.tab__item--left:hover .tab__item--right {
   border-left: 1px solid var(--color-blue-1);
 }
