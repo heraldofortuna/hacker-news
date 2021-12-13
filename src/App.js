@@ -8,25 +8,30 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
   const [data, setData] = useState();
 
-  useEffect(() => {
+  const fetchApi = async () => {
     const BASE_URL =
       "https://hn.algolia.com/api/v1/search_by_date?query=angular&page=0";
 
-    fetch(BASE_URL)
-      .then((res) => res.json())
-      .then((apiData) => {
-        console.log(apiData);
-        setData(apiData);
-      });
+    const response = await fetch(BASE_URL);
+    const responseJSON = await response.json();
+    setData(responseJSON);
+  };
+
+  useEffect(() => {
+    fetchApi();
   }, []);
 
   return (
     <Router>
       <Header />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/faves" element={<Faves />} />
-      </Routes>
+      {!data ? (
+        <h1>Hola mundo</h1>
+      ) : (
+        <Routes>
+          <Route exact path="/" element={<Home data={data} />} />
+          <Route exact path="/faves" element={<Faves />} />
+        </Routes>
+      )}
     </Router>
   );
 };

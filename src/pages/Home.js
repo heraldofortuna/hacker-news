@@ -3,7 +3,7 @@ import NewSelect from "../components/NewSelect";
 import CardList from "../components/CardList";
 import Navigator from "../components/Navigator";
 
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <main>
       <div className="container">
@@ -14,7 +14,7 @@ const Home = () => {
           <NewSelect />
         </section>
         <section>
-          <CardList />
+          <CardList data={data.hits} />
         </section>
         <section className="navigator-section">
           <Navigator />
