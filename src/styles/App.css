@@ -32,19 +32,37 @@
 }
 
 .tab-section {
-  padding: 70px 0;
+  padding: 50px 0;
   /** Grid CSS styles **/
   display: grid;
   place-items: center;
 }
 
 .select-section {
-  padding: 0 0 30px 0;
+  padding: 0 0 20px 0;
 }
 
 .navigator-section {
-  padding: 100px 0;
+  padding: 60px 0;
   /** Grid CSS styles **/
   display: grid;
   place-items: center;
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 75%;
+  }
+
+  .tab-section {
+    padding: 70px 0;
+  }
+
+  .select-section {
+    padding: 0 0 30px 0;
+  }
+
+  .navigator-section {
+    padding: 100px 0;
+  }
 }
