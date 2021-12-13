@@ -1,7 +1,7 @@
-import NewSelect from "../components/NewSelect";
-import Card from "../components/Card";
-import Navigator from "../components/Navigator";
 import Tab from "../components/Tab";
+import NewSelect from "../components/NewSelect";
+import CardList from "../components/CardList";
+import Navigator from "../components/Navigator";
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
           <NewSelect />
         </section>
         <section>
-          <Card />
+          <CardList />
         </section>
         <section className="navigator-section">
           <Navigator />

@@ -1,11 +1,12 @@
 .card {
-  width: fit-content;
+  width: 100%;
   background-color: var(--color-white);
   border-radius: 6px;
   border: solid 1px var(--color-gray-4);
   /** Flexbox styles **/
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .card__content {
