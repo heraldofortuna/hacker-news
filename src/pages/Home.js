@@ -3,7 +3,9 @@ import NewSelect from "../components/NewSelect";
 import CardList from "../components/CardList";
 import Navigator from "../components/Navigator";
 
-const Home = ({ data }) => {
+const Home = ({ data, changeQuery }) => {
+  const handleQuery = (option) => changeQuery(option)
+
   return (
     <main>
       <div className="container">
@@ -11,7 +13,7 @@ const Home = ({ data }) => {
           <Tab />
         </section>
         <section className="select-section">
-          <NewSelect />
+          <NewSelect changeQuery={handleQuery} />
         </section>
         <section>
           <CardList data={data.hits} />

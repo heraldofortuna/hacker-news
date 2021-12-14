@@ -8,16 +8,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
   const [data, setData] = useState();
 
-  const fetchApi = async () => {
-    const BASE_URL =
-      "https://hn.algolia.com/api/v1/search_by_date?query=angular&page=0";
+  const handleQuery = (query) => {
+    fetchApi(query);
+  };
 
+  const fetchApi = async (query = "angular", page = "0") => {
+    const BASE_URL = `https://hn.algolia.com/api/v1/search_by_date?query=${query}&page=${page}`;
     const response = await fetch(BASE_URL);
     const responseJSON = await response.json();
     setData(responseJSON);
   };
 
   useEffect(() => {
+    console.log("useEffect");
     fetchApi();
   }, []);
 
@@ -28,7 +31,11 @@ const App = () => {
         <h1>Hola mundo</h1>
       ) : (
         <Routes>
-          <Route exact path="/" element={<Home data={data} />} />
+          <Route
+            exact
+            path="/"
+            element={<Home data={data} changeQuery={handleQuery} />}
+          />
           <Route exact path="/faves" element={<Faves />} />
         </Routes>
       )}
