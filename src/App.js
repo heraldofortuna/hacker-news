@@ -8,9 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
   const [data, setData] = useState();
 
-  const handleQuery = (query) => {
-    fetchApi(query);
-  };
+  const handleQuery = (query) => fetchApi(query);
 
   const fetchApi = async (query = "angular", page = "0") => {
     const BASE_URL = `https://hn.algolia.com/api/v1/search_by_date?query=${query}&page=${page}`;
@@ -27,10 +25,12 @@ const App = () => {
   return (
     <Router>
       <Header />
+      {console.log("Estoy en el return")}
       {!data ? (
         <h1>Hola mundo</h1>
       ) : (
         <Routes>
+          {console.log("Estoy en el render Main")}
           <Route
             exact
             path="/"

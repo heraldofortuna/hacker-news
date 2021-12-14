@@ -1,8 +1,11 @@
+import { useState } from "react";
 import "../styles/Card.css";
 import clock from "../assets/clock.svg";
 import heart from "../assets/heart.svg";
+import fillHeart from "../assets/heart-fill.svg";
 
 const Card = ({ data }) => {
+  const [fave, setFave] = useState(false);
   const timeMs = new Date() - new Date(data.created_at);
   let time = "0 seconds";
 
@@ -12,8 +15,15 @@ const Card = ({ data }) => {
     time = Math.trunc(timeMs / 60000).toLocaleString() + " minutes";
   }
 
+  const faveToogle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+    setFave(!fave);
+  };
+
   return (
-    <div className="card">
+    <a className="card" href={data.story_url} target="_blank" rel="noreferrer">
       <div className="card__content">
         <div className="card__content__time">
           <img
@@ -30,11 +40,12 @@ const Card = ({ data }) => {
       <div className="card__fave">
         <img
           className="card__fave__icon"
-          src={heart}
+          onClick={faveToogle}
+          src={fave ? fillHeart : heart}
           alt="Favorite publication icon"
         />
       </div>
-    </div>
+    </a>
   );
 };
 
