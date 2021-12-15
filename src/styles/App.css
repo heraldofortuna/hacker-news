@@ -31,6 +31,13 @@
   margin: 0 auto;
 }
 
+.loading__container {
+  height: calc(100vh - 114px);
+  /** Grid CSS styles **/
+  display: grid;
+  place-items: center;
+}
+
 .tab-section {
   padding: 50px 0;
   /** Grid CSS styles **/

@@ -13,15 +13,7 @@ const Home = ({ data, changeQuery }) => {
   const lastPage = Math.ceil(data.length / newsPerPage);
   const indexOfLastNew = currentPage * newsPerPage;
   const indexOfFirstNew = indexOfLastNew - newsPerPage;
-  const currentNews = data
-    .filter(
-      (item) =>
-        (item.author &&
-          item.story_title &&
-          item.story_url &&
-          item.created_at) !== null
-    )
-    .slice(indexOfFirstNew, indexOfLastNew);
+  const currentNews = data.slice(indexOfFirstNew, indexOfLastNew);
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
