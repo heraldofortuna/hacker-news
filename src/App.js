@@ -34,7 +34,7 @@ const App = () => {
           <Route
             exact
             path="/"
-            element={<Home data={data} changeQuery={handleQuery} />}
+            element={<Home data={data.hits} changeQuery={handleQuery} />}
           />
           <Route exact path="/faves" element={<Faves />} />
         </Routes>

@@ -1,5 +1,5 @@
 import Tab from "../components/Tab";
-import Navigator from "../components/Navigator";
+import Navigator from "../components/Pagination";
 
 const Faves = () => {
   return (
