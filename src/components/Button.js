@@ -1,8 +1,12 @@
 import "../styles/Button.css";
 
-const Button = ({ text, handleClick }) => {
+const Button = ({ text, handleClick, disabled }) => {
   return (
-    <button className="button" onClick={() => handleClick()}>
+    <button
+      className={disabled ? "button button--disabled" : "button"}
+      onClick={() => handleClick()}
+      disabled={disabled}
+    >
       {text}
     </button>
   );

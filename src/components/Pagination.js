@@ -1,24 +1,34 @@
 import "../styles/Pagination.css";
 import Button from "./Button";
 
-const Pagination = ({ newsPerPage, totalNews, paginate }) => {
-  const pageNumbers = [];
-
-  for (let idx = 1; idx <= Math.ceil(totalNews / newsPerPage); idx++) {
-    pageNumbers.push(idx);
-  }
+const Pagination = ({
+  currentPage,
+  lastPage,
+  paginate,
+  previousPage,
+  nextPage,
+}) => {
+  const pageNumbers = Array.from({ length: lastPage }, (_, i) => i + 1);
 
   return (
     <div className="pagination">
-      <Button text="<" />
+      <Button
+        text="<"
+        handleClick={() => previousPage()}
+        disabled={currentPage === 1}
+      />
       {pageNumbers.map((number) => (
         <Button
+          text={number}
           handleClick={() => paginate(number)}
           key={number}
-          text={number}
         />
       ))}
-      <Button text=">" />
+      <Button
+        text=">"
+        handleClick={() => nextPage()}
+        disabled={currentPage === lastPage}
+      />
     </div>
   );
 };

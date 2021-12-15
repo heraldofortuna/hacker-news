@@ -10,6 +10,7 @@ const Home = ({ data, changeQuery }) => {
   const handleQuery = (option) => changeQuery(option);
 
   // Get current news
+  const lastPage = Math.ceil(data.length / newsPerPage);
   const indexOfLastNew = currentPage * newsPerPage;
   const indexOfFirstNew = indexOfLastNew - newsPerPage;
   const currentNews = data
@@ -24,6 +25,8 @@ const Home = ({ data, changeQuery }) => {
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const previousPage = () => setCurrentPage(currentPage - 1);
+  const nextPage = () => setCurrentPage(currentPage + 1);
 
   return (
     <main>
@@ -39,9 +42,11 @@ const Home = ({ data, changeQuery }) => {
         </section>
         <section className="navigator-section">
           <Pagination
-            newsPerPage={newsPerPage}
-            totalNews={data.length}
+            currentPage={currentPage}
+            lastPage={lastPage}
             paginate={paginate}
+            previousPage={previousPage}
+            nextPage={nextPage}
           />
         </section>
       </div>

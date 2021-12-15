@@ -10,6 +10,7 @@
   border: 1px solid var(--color-gray-1);
   border-radius: 2px;
   cursor: pointer;
+  transition: 0.4s all;
   /** Font styles **/
   font-size: 16px;
   font-weight: 500;

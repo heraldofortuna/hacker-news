@@ -4,6 +4,8 @@
   height: 32px;
   border: solid 1px var(--color-gray-1);
   border-radius: 6px;
+  cursor: pointer;
+  transition: 0.4s all;
   /** Font styles **/
   color: var(--color-gray-7);
   font-size: 14px;
@@ -18,7 +20,25 @@
 .button:hover {
   background-color: var(--color-blue-2);
   border: solid 1px var(--color-blue-2);
-  cursor: pointer;
   /** Font styles **/
   color: var(--color-white-1);
+}
+
+.button:focus {
+  background-color: var(--color-blue-2);
+  border: solid 1px var(--color-blue-2);
+  /** Font styles **/
+  color: var(--color-white-1);
+}
+
+.button--disabled {
+  background-color: var(--color-gray-1);
+  color: var(--color-white-2);
+}
+
+.button--disabled:hover {
+  background-color: var(--color-gray-1);
+  border: 1px solid var(--color-gray-1);
+  /** Font styles **/
+  color: var(--color-white-2);
 }
