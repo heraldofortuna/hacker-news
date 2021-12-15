@@ -4,19 +4,10 @@ import NewSelect from "../components/NewSelect";
 import CardList from "../components/CardList";
 import Pagination from "../components/Pagination";
 
-const Home = ({ data, changeQuery }) => {
+const Home = ({ data, changeQuery, changePage }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [newsPerPage] = useState(8);
-  const handleQuery = (option) => changeQuery(option);
-
-  // Get current news
-  const lastPage = Math.ceil(data.length / newsPerPage);
-  const indexOfLastNew = currentPage * newsPerPage;
-  const indexOfFirstNew = indexOfLastNew - newsPerPage;
-  const currentNews = data.slice(indexOfFirstNew, indexOfLastNew);
-
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const handleQuery = (query) => changeQuery(query);
+  const paginate = (pageNumber) => changePage(pageNumber);
   const previousPage = () => setCurrentPage(currentPage - 1);
   const nextPage = () => setCurrentPage(currentPage + 1);
 
@@ -30,12 +21,10 @@ const Home = ({ data, changeQuery }) => {
           <NewSelect changeQuery={handleQuery} />
         </section>
         <section>
-          <CardList data={currentNews} />
+          <CardList data={data} />
         </section>
         <section className="navigator-section">
           <Pagination
-            currentPage={currentPage}
-            lastPage={lastPage}
             paginate={paginate}
             previousPage={previousPage}
             nextPage={nextPage}

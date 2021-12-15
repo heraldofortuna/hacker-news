@@ -7,13 +7,19 @@ import Faves from "./pages/Faves";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
+  const [query, setQuery] = useState("angular");
   const [data, setData] = useState();
 
-  const handleQuery = (query) => fetchApi(query);
+  const handleQuery = (newQuery) => {
+    setQuery(newQuery);
+    fetchApi(newQuery, 0);
+  };
 
-  const fetchApi = async (query = "angular", page = "0") => {
-    const BASE_URL = `https://hn.algolia.com/api/v1/search_by_date?query=${query}&page=${page}`;
-    const response = await fetch(BASE_URL);
+  const handlePage = (newPage) => fetchApi(query, newPage - 1);
+
+  const fetchApi = async (apiQuery = "angular", apiPage = 0) => {
+    const URL = `https://hn.algolia.com/api/v1/search_by_date?query=${apiQuery}&page=${apiPage}`;
+    const response = await fetch(URL);
     const responseJSON = await response.json();
     const filteredData = responseJSON.hits.filter(
       (item) =>
@@ -22,6 +28,7 @@ const App = () => {
           item.story_url &&
           item.created_at) !== null
     );
+
     setData(filteredData);
   };
 
@@ -42,7 +49,13 @@ const App = () => {
           <Route
             exact
             path="/"
-            element={<Home data={data} changeQuery={handleQuery} />}
+            element={
+              <Home
+                data={data}
+                changeQuery={handleQuery}
+                changePage={handlePage}
+              />
+            }
           />
           <Route exact path="/faves" element={<Faves />} />
         </Routes>

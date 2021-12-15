@@ -1,35 +1,21 @@
 import "../styles/Pagination.css";
 import Button from "./Button";
 
-const Pagination = ({
-  currentPage,
-  lastPage,
-  paginate,
-  previousPage,
-  nextPage,
-}) => {
-  const pageNumbers = Array.from({ length: lastPage }, (_, i) => i + 1);
+const Pagination = ({ paginate, previousPage, nextPage }) => {
+  const pageNumbers = Array.from({ length: 9 }, (_, i) => i + 1);
 
   return (
     <div className="pagination">
-      <Button
-        text="<"
-        handleClick={() => previousPage()}
-        disabled={currentPage === 1}
-      />
+      <Button text="<" handleClick={() => previousPage()} disabled={false} />
       {pageNumbers.map((number) => (
         <Button
           text={number}
           handleClick={() => paginate(number)}
           key={number}
-          focused={currentPage === number}
+          focused={false}
         />
       ))}
-      <Button
-        text=">"
-        handleClick={() => nextPage()}
-        disabled={currentPage === lastPage}
-      />
+      <Button text=">" handleClick={() => nextPage()} disabled={false} />
     </div>
   );
 };
