@@ -1,7 +1,10 @@
+/* Usamos !important muchas veces, pues al ser un componente de una librería */
+/* de React, no tenemos el control total de las clases generadas.*/
 .react-select-container {
   width: 100%;
   border-radius: 4px;
   border: solid 1px var(--color-gray-4) !important;
+  cursor: pointer !important;
 }
 
 .react-select-container:focus {
@@ -11,6 +14,7 @@
 
 .react-select__control {
   border: none !important;
+  cursor: pointer !important;
   /** Flexbox styles **/
   display: flex;
   flex-direction: row;

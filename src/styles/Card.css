@@ -70,4 +70,10 @@
 
 .card__fave__icon {
   cursor: pointer;
+  transition: 0.4s all;
+}
+
+.card__fave__icon:hover {
+  transform: scale(1.2);
+  fill: red;
 }
