@@ -13,6 +13,8 @@ const NewSelect = ({ changeQuery }) => {
 
   return (
     <Select
+      className="react-select-container"
+      classNamePrefix="react-select"
       defaultValue={options[0]}
       options={options}
       components={{ Option: IconOption }}
