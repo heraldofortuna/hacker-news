@@ -1,15 +1,23 @@
-import { useState } from "react";
 import Tab from "../components/Tab";
 import NewSelect from "../components/NewSelect";
 import CardList from "../components/CardList";
 import Pagination from "../components/Pagination";
 
-const Home = ({ data, changeQuery, changePage }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+const Home = ({ data, currentPage, changeQuery, changePage }) => {
   const handleQuery = (query) => changeQuery(query);
-  const paginate = (pageNumber) => changePage(pageNumber);
-  const previousPage = () => setCurrentPage(currentPage - 1);
-  const nextPage = () => setCurrentPage(currentPage + 1);
+
+  const paginate = (pageNumber) => {
+    switch (pageNumber) {
+      case "<":
+        changePage(currentPage - 1);
+        break;
+      case ">":
+        changePage(currentPage + 1);
+        break;
+      default:
+        changePage(pageNumber);
+    }
+  };
 
   return (
     <main>
@@ -24,11 +32,7 @@ const Home = ({ data, changeQuery, changePage }) => {
           <CardList data={data} />
         </section>
         <section className="navigator-section">
-          <Pagination
-            paginate={paginate}
-            previousPage={previousPage}
-            nextPage={nextPage}
-          />
+          <Pagination paginate={paginate} currentPage={currentPage} />
         </section>
       </div>
     </main>
