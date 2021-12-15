@@ -22,6 +22,7 @@ const Pagination = ({
           text={number}
           handleClick={() => paginate(number)}
           key={number}
+          focused={currentPage === number}
         />
       ))}
       <Button
