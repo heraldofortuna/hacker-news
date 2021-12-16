@@ -1,7 +1,12 @@
 import "../styles/Pagination.css";
 import Button from "./Button";
 
-const Pagination = ({ paginate, currentPage}) => {
+/**
+ * @param {paginate} Función que maneja el cambio página que nos dan los botones.
+ * @param {currentPage} Número de página actual
+ * @returns Componente que renderiza el conjunto de botones de paginación de la aplicación.
+ */
+const Pagination = ({ paginate, currentPage }) => {
   const pageNumbers = Array.from({ length: 9 }, (_, i) => i + 1);
 
   return (

@@ -2,6 +2,9 @@ import Tab from "../components/Tab";
 import CardList from "../components/CardList";
 import Navigator from "../components/Pagination";
 
+/**
+ * @returns Página de favoritos.
+ */
 const Faves = () => {
   let data = [];
 
@@ -15,7 +18,7 @@ const Faves = () => {
     <main>
       <div className="container">
         <section className="tab-section">
-          <Tab />
+          <Tab inFaves={true} />
         </section>
         <section>
           <CardList data={data} />

@@ -1,6 +1,6 @@
 # Hacker News
 
-![Project Image](hacker-news/src/assets/project-image.png)
+![Project Image](./src/assets/project-image.png)
 
 > Screenshot
 

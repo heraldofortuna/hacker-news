@@ -6,11 +6,15 @@ import Home from "./pages/Home";
 import Faves from "./pages/Faves";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+/**
+ * @returns El componente principal que devuelve la aplicación completa.
+ */
 const App = () => {
   const [query, setQuery] = useState("angular");
   const [page, setPage] = useState(1);
   const [data, setData] = useState();
 
+  // Función que trae el valor del query y lo actualiza en la aplicación.
   const handleQuery = () => {
     const newQuery = localStorage.getItem("query");
     setQuery(newQuery);
@@ -18,11 +22,13 @@ const App = () => {
     fetchApi(newQuery, 0);
   };
 
+  // Función que trae el valor de la página actual y lo actualiza en la aplicación.
   const handlePage = (newPage) => {
     setPage(newPage);
     fetchApi(query, newPage - 1);
   };
 
+  // Función que realiza el fetch del API con un URL específico.
   const fetchApi = async (apiQuery = "angular", apiPage = 0) => {
     const URL = `https://hn.algolia.com/api/v1/search_by_date?query=${apiQuery}&page=${apiPage}`;
     const response = await fetch(URL);

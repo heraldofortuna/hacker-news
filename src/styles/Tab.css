@@ -42,3 +42,14 @@
 .tab__item--left:hover .tab__item--right {
   border-left: 1px solid var(--color-blue-1);
 }
+
+.tab__item--left--focused {
+  color: var(--color-blue-1);
+  border: 1px solid var(--color-blue-1);
+  border-right: none;
+}
+
+.tab__item--right--focused {
+  color: var(--color-blue-1);
+  border: 1px solid var(--color-blue-1);
+}

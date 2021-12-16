@@ -4,6 +4,10 @@ import clock from "../assets/clock.svg";
 import heart from "../assets/heart.svg";
 import fillHeart from "../assets/heart-fill.svg";
 
+/**
+ * @param {data} Datos de una noticia que se mostraran en el card.
+ * @returns Componente que renderiza cada noticia en un card.
+ */
 const Card = ({ data }) => {
   const [fave, setFave] = useState(false);
   const timeMs = new Date() - new Date(data.created_at);
@@ -15,6 +19,7 @@ const Card = ({ data }) => {
     time = Math.trunc(timeMs / 60000).toLocaleString() + " minutes";
   }
 
+  // Función que cambia el estado del botón de favorito.
   const faveToogle = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -23,6 +28,7 @@ const Card = ({ data }) => {
     addFaveNewToStorage(data, fave);
   };
 
+  // Función que añade un card a la lista de favoritos en el localStorage.
   const addFaveNewToStorage = (data, fave) => {
     if (fave) {
       localStorage.removeItem(data.objectID);
