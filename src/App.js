@@ -24,7 +24,6 @@ const App = () => {
 
   const fetchApi = async (apiQuery = "angular", apiPage = 0) => {
     const URL = `https://hn.algolia.com/api/v1/search_by_date?query=${apiQuery}&page=${apiPage}`;
-    console.log(URL);
     const response = await fetch(URL);
     const responseJSON = await response.json();
     const filteredData = responseJSON.hits.filter(
@@ -34,24 +33,26 @@ const App = () => {
           item.story_url &&
           item.created_at) !== null
     );
+    const result = filteredData.map((el) => {
+      const finalData = Object.assign({}, el);
+      finalData.isFave = false;
+      return finalData;
+    });
 
-    setData(filteredData);
+    setData(result);
   };
 
   useEffect(() => {
-    console.log("useEffect del App");
     fetchApi();
   }, []);
 
   return (
     <Router>
       <Header />
-      {console.log("Estoy en el return del App")}
       {!data ? (
         <Loading />
       ) : (
         <Routes>
-          {console.log("Estoy en el render App -> Main")}
           <Route
             exact
             path="/"

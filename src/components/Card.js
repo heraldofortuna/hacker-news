@@ -20,6 +20,18 @@ const Card = ({ data }) => {
     e.stopPropagation();
     e.nativeEvent.stopImmediatePropagation();
     setFave(!fave);
+    addFaveNewToStorage(data, fave);
+  };
+
+  const addFaveNewToStorage = (data, fave) => {
+    if (fave) {
+      localStorage.removeItem(data.objectID);
+    } else {
+      localStorage.setItem(
+        data.objectID,
+        JSON.stringify({ ...data, isFave: !fave })
+      );
+    }
   };
 
   return (

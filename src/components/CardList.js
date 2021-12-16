@@ -2,16 +2,10 @@ import "../styles/CardList.css";
 import Card from "./Card";
 
 const CardList = ({ data }) => {
-  // const filteredData = data.filter(
-  //   (item) =>
-  //     (item.author && item.story_title && item.story_url && item.created_at) !==
-  //     null
-  // );
-
   return (
     <div className="cardlist">
-      {data.map((item, index) => (
-        <Card key={index} data={item} />
+      {data.map((item) => (
+        <Card key={item.objectID} data={item} />
       ))}
     </div>
   );
