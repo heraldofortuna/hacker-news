@@ -9,7 +9,10 @@ const options = [
 ];
 
 const NewSelect = ({ changeQuery }) => {
-  const handleQueryChanged = (option) => changeQuery(option.value);
+  const handleQueryChanged = (option) => {
+    localStorage.setItem("query", option.value);
+    changeQuery(option.value);
+  };
 
   return (
     <Select

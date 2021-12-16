@@ -11,7 +11,8 @@ const App = () => {
   const [page, setPage] = useState(1);
   const [data, setData] = useState();
 
-  const handleQuery = (newQuery) => {
+  const handleQuery = () => {
+    const newQuery = localStorage.getItem("query");
     setQuery(newQuery);
     setPage(1);
     fetchApi(newQuery, 0);
