@@ -4,7 +4,7 @@ import Header from "./layouts/Header";
 import Loading from "./pages/Loading";
 import Home from "./pages/Home";
 import Faves from "./pages/Faves";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 /**
  * @returns El componente principal que devuelve la aplicación completa.
@@ -54,7 +54,7 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
+    <HashRouter>
       <Header />
       {!data ? (
         <Loading />
@@ -75,7 +75,7 @@ const App = () => {
           <Route exact path="/faves" element={<Faves />} />
         </Routes>
       )}
-    </Router>
+    </HashRouter>
   );
 };
 
