@@ -1,12 +1,15 @@
 import "../styles/NewSelect.css";
 import IconOption from "./IconOption";
 import Select from "react-select";
+import AngularIcon from "../assets/angular.png";
+import ReactJsIcon from "../assets/reactjs.png";
+import VueJsIcon from "../assets/vuejs.png";
 
 // Opciones del selector.
 const options = [
-  { value: "angular", label: "Angular", icon: "angular.png" },
-  { value: "reactjs", label: "Reactjs", icon: "reactjs.png" },
-  { value: "vuejs", label: "Vuejs", icon: "vuejs.png" },
+  { value: "angular", label: "Angular", icon: AngularIcon },
+  { value: "reactjs", label: "Reactjs", icon: ReactJsIcon },
+  { value: "vuejs", label: "Vuejs", icon: VueJsIcon },
 ];
 
 /**

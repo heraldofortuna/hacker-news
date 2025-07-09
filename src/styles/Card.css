@@ -8,7 +8,6 @@
   text-decoration: none;
   cursor: pointer;
   transition: 0.4s all;
-  /** Flexbox styles **/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -21,7 +20,6 @@
 .card__content {
   max-width: 75%;
   padding: 26px;
-  /** Flexbox styles **/
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -32,7 +30,6 @@
   min-width: 60px;
   background-color: var(--color-gray-3);
   border-radius: 0 6px 6px 0;
-  /** Grid CSS styles **/
   display: grid;
   place-items: center;
 }

@@ -1,5 +1,28 @@
 .pagination {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  padding: 16px 0;
+  flex-wrap: wrap;
+}
+
+.pagination-ellipsis {
+  padding: 0 4px;
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 4px;
+  }
+
+  .pagination .button {
+    min-width: 32px;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+  
+  .pagination-arrow {
+    min-width: 36px;
+  }
 }

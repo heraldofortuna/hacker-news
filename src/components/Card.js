@@ -9,7 +9,7 @@ import fillHeart from "../assets/heart-fill.svg";
  * @returns Componente que renderiza cada noticia en un card.
  */
 const Card = ({ data }) => {
-  const [fave, setFave] = useState(false);
+  const [isFave, setIsFave] = useState(localStorage.getItem(data.objectID) !== null);
   const timeMs = new Date() - new Date(data.created_at);
   let time = "0 seconds";
 
@@ -20,22 +20,22 @@ const Card = ({ data }) => {
   }
 
   // Función que cambia el estado del botón de favorito.
-  const faveToogle = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
-    setFave(!fave);
-    addFaveNewToStorage(data, fave);
+  const faveToogle = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
+    setIsFave(!isFave);
+    addFaveNewToStorage(data, isFave);
   };
 
   // Función que añade un card a la lista de favoritos en el localStorage.
-  const addFaveNewToStorage = (data, fave) => {
-    if (fave) {
+  const addFaveNewToStorage = (data, isFave) => {
+    if (isFave) {
       localStorage.removeItem(data.objectID);
     } else {
       localStorage.setItem(
         data.objectID,
-        JSON.stringify({ ...data, isFave: !fave })
+        JSON.stringify({ ...data, isFave: !isFave })
       );
     }
   };
@@ -59,7 +59,7 @@ const Card = ({ data }) => {
         <img
           className="card__fave__icon"
           onClick={faveToogle}
-          src={fave ? fillHeart : heart}
+          src={isFave ? fillHeart : heart}
           alt="Favorite publication icon"
         />
       </div>

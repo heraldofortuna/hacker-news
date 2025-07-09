@@ -6,6 +6,8 @@ import Card from "./Card";
  * @returns Componente que renderiza la lista de noticias que se mostraran.
  */
 const CardList = ({ data }) => {
+  if (data.length === 0) return <p className="cardlist__text">No items</p>
+
   return (
     <div className="cardlist">
       {data.map((item) => (

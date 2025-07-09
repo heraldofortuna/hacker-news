@@ -9,7 +9,7 @@ const IconOption = (props) => {
   return (
     <Option {...props}>
       <img
-        src={require("../assets/" + props.data.icon).default}
+        src={props.data.icon}
         alt={props.data.label}
       />
       {props.data.label}

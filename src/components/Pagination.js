@@ -1,13 +1,24 @@
 import "../styles/Pagination.css";
 import Button from "./Button";
 
-/**
- * @param {paginate} Función que maneja el cambio página que nos dan los botones.
- * @param {currentPage} Número de página actual
- * @returns Componente que renderiza el conjunto de botones de paginación de la aplicación.
- */
-const Pagination = ({ paginate, currentPage }) => {
-  const pageNumbers = Array.from({ length: 9 }, (_, i) => i + 1);
+const Pagination = ({ paginate, currentPage, totalPages }) => {
+  const getVisiblePages = () => {
+    const visiblePages = [];
+    const maxVisible = 5;
+    
+    let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+    let end = Math.min(totalPages, start + maxVisible - 1);
+    
+    if (end - start + 1 < maxVisible) {
+      start = Math.max(1, end - maxVisible + 1);
+    }
+    
+    for (let i = start; i <= end; i++) {
+      visiblePages.push(i);
+    }
+    
+    return visiblePages;
+  };
 
   return (
     <div className="pagination">
@@ -16,18 +27,20 @@ const Pagination = ({ paginate, currentPage }) => {
         handleClick={() => paginate("<")}
         disabled={currentPage === 1}
       />
-      {pageNumbers.map((number) => (
+      
+      {getVisiblePages().map((number) => (
         <Button
+          key={number}
           text={number}
           handleClick={() => paginate(number)}
-          key={number}
           focused={currentPage === number}
         />
       ))}
+      
       <Button
         text=">"
         handleClick={() => paginate(">")}
-        disabled={currentPage === 9}
+        disabled={currentPage === totalPages}
       />
     </div>
   );
