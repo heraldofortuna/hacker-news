@@ -1,27 +1,17 @@
 {
   "files": {
-    "main.css": "/hacker-news/static/css/main.5cdc9d62.chunk.css",
-    "main.js": "/hacker-news/static/js/main.11c58906.chunk.js",
-    "main.js.map": "/hacker-news/static/js/main.11c58906.chunk.js.map",
-    "runtime-main.js": "/hacker-news/static/js/runtime-main.ff1db8ad.js",
-    "runtime-main.js.map": "/hacker-news/static/js/runtime-main.ff1db8ad.js.map",
-    "static/js/2.6685b2df.chunk.js": "/hacker-news/static/js/2.6685b2df.chunk.js",
-    "static/js/2.6685b2df.chunk.js.map": "/hacker-news/static/js/2.6685b2df.chunk.js.map",
+    "main.css": "/hacker-news/static/css/main.f1f2bfc1.css",
+    "main.js": "/hacker-news/static/js/main.d2cb725e.js",
     "index.html": "/hacker-news/index.html",
-    "static/css/main.5cdc9d62.chunk.css.map": "/hacker-news/static/css/main.5cdc9d62.chunk.css.map",
-    "static/js/2.6685b2df.chunk.js.LICENSE.txt": "/hacker-news/static/js/2.6685b2df.chunk.js.LICENSE.txt",
-    "static/media/clock-ghost.svg": "/hacker-news/static/media/clock-ghost.2f8e31b3.svg",
-    "static/media/clock.svg": "/hacker-news/static/media/clock.c699b79c.svg",
-    "static/media/hacker-news.svg": "/hacker-news/static/media/hacker-news.35ab5282.svg",
-    "static/media/heart-fill.svg": "/hacker-news/static/media/heart-fill.f1712183.svg",
-    "static/media/heart-ghost.svg": "/hacker-news/static/media/heart-ghost.9b233b0a.svg",
-    "static/media/heart.svg": "/hacker-news/static/media/heart.31453e10.svg",
-    "static/media/project-image.png": "/hacker-news/static/media/project-image.b147cb2b.png"
+    "static/media/heart.svg": "/hacker-news/static/media/heart.21526bc77baf928ab6882e7333c5a4d5.svg",
+    "static/media/clock.svg": "/hacker-news/static/media/clock.a3477b73f867158faff0a7b56d43af3f.svg",
+    "static/media/hacker-news.svg": "/hacker-news/static/media/hacker-news.ff7a6a6457827b3dd6b935f699737915.svg",
+    "static/media/heart-fill.svg": "/hacker-news/static/media/heart-fill.ad9d4f4f7d6e2cce5b86c5d0902a4a1b.svg",
+    "main.f1f2bfc1.css.map": "/hacker-news/static/css/main.f1f2bfc1.css.map",
+    "main.d2cb725e.js.map": "/hacker-news/static/js/main.d2cb725e.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.ff1db8ad.js",
-    "static/js/2.6685b2df.chunk.js",
-    "static/css/main.5cdc9d62.chunk.css",
-    "static/js/main.11c58906.chunk.js"
+    "static/css/main.f1f2bfc1.css",
+    "static/js/main.d2cb725e.js"
   ]
 }
